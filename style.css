@@ -38,7 +38,7 @@ body:has(#fullscreen-toggle:checked) {
 header {
     background: var(--primary);
     color: white;
-    padding: 1rem 2rem;
+    padding: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     position: sticky;
     top: 0;
@@ -171,46 +171,6 @@ header {
     transform: translateY(-1px);
 }
 
-.dashboard-label.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    position: relative;
-    /* Removed pointer-events: none so hover still works for tooltips */
-}
-
-/* Custom CSS Tooltip */
-.dashboard-label.disabled::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 110%;
-    /* Place tooltip above */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--primary);
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s, visibility 0.2s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-}
-
-.dashboard-label.disabled:hover::after {
-    opacity: 1;
-    visibility: visible;
-}
-
-.dashboard-label.disabled:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: none;
-}
-
-
 /* Dashboard Selection Styling */
 #dash-revenue:checked~.dashboards-menu-wrapper label[for="dash-revenue"],
 #dash-expenses:checked~.dashboards-menu-wrapper label[for="dash-expenses"],
@@ -241,7 +201,7 @@ header {
 /* Main Content Area */
 .main-content {
     max-width: 1400px;
-    margin: 1rem auto;
+    margin: 2rem auto;
     padding: 0 1rem;
 }
 
@@ -254,29 +214,156 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
     flex-direction: column;
     position: relative;
     transition: all 0.3s ease;
 }
 
-/* Show placeholder only when the dynamic container is empty */
-#dynamic-content-container:empty+.placeholder {
-    display: flex;
+/* Fullscreen Controls */
+.dashboard-controls {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
 }
 
-#dynamic-content-container:not(:empty)+.placeholder {
+.btn-fullscreen,
+.btn-exit-fullscreen {
+    cursor: pointer;
+    background: rgba(44, 62, 80, 0.1);
+    border-radius: 4px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-fullscreen:hover,
+.btn-exit-fullscreen:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-exit-fullscreen {
     display: none;
 }
 
-/* Dashboard Content Areas (Loaded dynamically via JS) */
-.dashboard-content {
-    display: flex;
-    flex-direction: column;
+/* Fullscreen Logic */
+#fullscreen-toggle:checked~.main-content .dashboard-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    border-radius: 0;
+    margin: 0;
+}
+
+#fullscreen-toggle:checked~.main-content .dashboard-container .dashboard-content {
     width: 100%;
     height: 100%;
-    min-height: 550px;
-    animation: fadeIn 0.4s ease-out;
+}
+
+#fullscreen-toggle:checked~.main-content .dashboard-container .dashboard-iframe {
+    height: calc(100vh - 4rem);
+    width: 100%;
+}
+
+#fullscreen-toggle:checked~.main-content .dashboard-container .dashboard-fallback {
+    display: none;
+}
+
+#fullscreen-toggle:checked~.main-content .btn-fullscreen {
+    display: none;
+}
+
+#fullscreen-toggle:checked~.main-content .btn-exit-fullscreen {
+    display: flex;
+}
+
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #95a5a6;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.placeholder-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.placeholder-info {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* Hide Placeholder when dashboard holds */
+#cat-finance:checked~#dash-revenue:checked~.main-content .placeholder,
+#cat-finance:checked~#dash-expenses:checked~.main-content .placeholder,
+#cat-finance:checked~#dash-cashflow:checked~.main-content .placeholder,
+#cat-finance:checked~#dash-budget:checked~.main-content .placeholder,
+#cat-sales:checked~#dash-sales-overview:checked~.main-content .placeholder,
+#cat-sales:checked~#dash-pipeline:checked~.main-content .placeholder,
+#cat-sales:checked~#dash-performance:checked~.main-content .placeholder,
+#cat-sales:checked~#dash-products:checked~.main-content .placeholder,
+#cat-social:checked~#dash-engagement:checked~.main-content .placeholder,
+#cat-social:checked~#dash-community:checked~.main-content .placeholder,
+#cat-social:checked~#dash-sentiment:checked~.main-content .placeholder,
+#cat-social:checked~#dash-campaigns:checked~.main-content .placeholder,
+#cat-textual:checked~#dash-content:checked~.main-content .placeholder,
+#cat-textual:checked~#dash-nlp:checked~.main-content .placeholder,
+#cat-textual:checked~#dash-feedback:checked~.main-content .placeholder,
+#cat-textual:checked~#dash-keywords:checked~.main-content .placeholder,
+#cat-others:checked~#dash-operations:checked~.main-content .placeholder,
+#cat-others:checked~#dash-kpis:checked~.main-content .placeholder,
+#cat-others:checked~#dash-reports:checked~.main-content .placeholder,
+#cat-others:checked~#dash-custom:checked~.main-content .placeholder {
+    display: none;
+}
+
+/* Dashboard-specific content */
+.dashboard-content {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* Show Content combinations */
+#cat-finance:checked~#dash-revenue:checked~.main-content #content-revenue,
+#cat-finance:checked~#dash-expenses:checked~.main-content #content-expenses,
+#cat-finance:checked~#dash-cashflow:checked~.main-content #content-cashflow,
+#cat-finance:checked~#dash-budget:checked~.main-content #content-budget,
+#cat-sales:checked~#dash-sales-overview:checked~.main-content #content-sales-overview,
+#cat-sales:checked~#dash-pipeline:checked~.main-content #content-pipeline,
+#cat-sales:checked~#dash-performance:checked~.main-content #content-performance,
+#cat-sales:checked~#dash-products:checked~.main-content #content-products,
+#cat-social:checked~#dash-engagement:checked~.main-content #content-engagement,
+#cat-social:checked~#dash-community:checked~.main-content #content-community,
+#cat-social:checked~#dash-sentiment:checked~.main-content #content-sentiment,
+#cat-social:checked~#dash-campaigns:checked~.main-content #content-campaigns,
+#cat-textual:checked~#dash-content:checked~.main-content #content-content,
+#cat-textual:checked~#dash-nlp:checked~.main-content #content-nlp,
+#cat-textual:checked~#dash-feedback:checked~.main-content #content-feedback,
+#cat-textual:checked~#dash-keywords:checked~.main-content #content-keywords,
+#cat-others:checked~#dash-operations:checked~.main-content #content-operations,
+#cat-others:checked~#dash-kpis:checked~.main-content #content-kpis,
+#cat-others:checked~#dash-reports:checked~.main-content #content-reports,
+#cat-others:checked~#dash-custom:checked~.main-content #content-custom {
+    display: block;
 }
 
 .dashboard-iframe {
@@ -288,13 +375,13 @@ header {
 
 .dashboard-fallback {
     text-align: center;
-    padding: 1rem;
+    padding: 2rem;
     width: 100%;
 }
 
 .dashboard-fallback h3 {
     color: var(--primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .dashboard-fallback p {

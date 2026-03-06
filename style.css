@@ -1,448 +1,440 @@
+/* ============================================
+   POWER PILLS — style.css
+   Pure HTML + CSS only. No JavaScript.
+   Dropdown via :hover | Selection via radio+CSS
+   ============================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --primary: #2c3e50;
-    --secondary: #16a085;
-    --accent: #e67e22;
-    --light: #ecf0f1;
-    --text: #2c3e50;
-    --border: #bdc3c7;
-    --hover: #1abc9c;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    min-height: 100vh;
-    color: var(--text);
-}
-
-body:has(#fullscreen-toggle:checked) {
+/* Full-height, no scroll */
+html, body {
+    height: 100%;
     overflow: hidden;
 }
 
-/* Hide global radios */
+:root {
+    --primary: #1a2535;
+    --accent:  #16a085;
+    --accent-dim: rgba(22, 160, 133, 0.18);
+    --text:    #ecf0f1;
+    --muted:   rgba(236, 240, 241, 0.7);
+    --border:  rgba(255, 255, 255, 0.1);
+    --hover-bg: rgba(255, 255, 255, 0.08);
+    --dropdown-bg: #1b2c3e;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    background: #0f1923;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* =====================
+   HIDE RADIO INPUTS
+   ===================== */
 .global-radio {
     display: none;
 }
 
-/* Header */
-header {
+/* =====================
+   NAVBAR  (sticky, 46px)
+   ===================== */
+.navbar {
+    flex-shrink: 0;
     background: var(--primary);
-    color: white;
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.header-content {
-    max-width: 1400px;
-    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
-    gap: 1rem;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.logo::before {
-    content: "📊";
-    font-size: 2rem;
-}
-
-.header-subtitle {
-    font-size: 0.9rem;
-    opacity: 0.85;
-}
-
-/* Categories Menu */
-.categories-menu {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    padding: 1rem 2rem;
-    background: var(--primary);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-}
-
-@media (min-width: 1400px) {
-    .categories-menu {
-        padding: 1rem calc((100% - 1400px)/2 + 2rem);
-        justify-content: flex-start;
-    }
-}
-
-.category-label {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    user-select: none;
-    white-space: nowrap;
-}
-
-.category-label:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-1px);
-}
-
-/* Category Selection styling */
-#cat-finance:checked~.categories-menu label[for="cat-finance"],
-#cat-sales:checked~.categories-menu label[for="cat-sales"],
-#cat-social:checked~.categories-menu label[for="cat-social"],
-#cat-textual:checked~.categories-menu label[for="cat-textual"],
-#cat-others:checked~.categories-menu label[for="cat-others"] {
-    background: var(--secondary);
-    color: white;
-    border-color: var(--secondary);
-    box-shadow: 0 4px 12px rgba(22, 160, 133, 0.4);
-}
-
-/* Dashboards Submenu Wrapper */
-.dashboards-menu-wrapper {
-    background: linear-gradient(135deg, #1a3a52, #2c5f80);
-    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    width: 100%;
-}
-
-.dashboards-menu {
-    display: none;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0.75rem 2rem;
-}
-
-/* Show Submenus */
-#cat-finance:checked~.dashboards-menu-wrapper #menu-finance,
-#cat-sales:checked~.dashboards-menu-wrapper #menu-sales,
-#cat-social:checked~.dashboards-menu-wrapper #menu-social,
-#cat-textual:checked~.dashboards-menu-wrapper #menu-textual,
-#cat-others:checked~.dashboards-menu-wrapper #menu-others {
-    display: flex;
-}
-
-.dashboard-label {
-    display: inline-block;
-    padding: 0.6rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: #ecf0f1;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-    user-select: none;
-    white-space: nowrap;
-}
-
-.dashboard-label:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-1px);
-}
-
-/* Disabled Dashboard Button */
-.dashboard-label.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+    padding: 0 1.5rem;
+    height: 46px;
+    gap: 0;
     position: relative;
+    z-index: 500;
 }
 
-/* Custom CSS Tooltip */
-.dashboard-label.disabled::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 110%;
-    /* Place tooltip above */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--primary);
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
+/* Brand */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-shrink: 0;
+    padding-right: 1.25rem;
+    border-right: 1px solid var(--border);
+    margin-right: 0.5rem;
+}
+
+.nav-logo  { font-size: 1rem; }
+
+.nav-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.02em;
     white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s, visibility 0.2s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 100;
 }
 
-.dashboard-label.disabled:hover::after {
-    opacity: 1;
-    visibility: visible;
+/* =====================
+   NAV MENU (ul)
+   ===================== */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 0;
 }
 
-.dashboard-label.disabled:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: none;
+/* =====================
+   NAV ITEM (li)
+   ===================== */
+.nav-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-/* Dashboard Selection Styling */
-#dash-revenue:checked~.dashboards-menu-wrapper label[for="dash-revenue"],
-#dash-expenses:checked~.dashboards-menu-wrapper label[for="dash-expenses"],
-#dash-cashflow:checked~.dashboards-menu-wrapper label[for="dash-cashflow"],
-#dash-budget:checked~.dashboards-menu-wrapper label[for="dash-budget"],
-#dash-sales-overview:checked~.dashboards-menu-wrapper label[for="dash-sales-overview"],
-#dash-pipeline:checked~.dashboards-menu-wrapper label[for="dash-pipeline"],
-#dash-performance:checked~.dashboards-menu-wrapper label[for="dash-performance"],
-#dash-products:checked~.dashboards-menu-wrapper label[for="dash-products"],
-#dash-engagement:checked~.dashboards-menu-wrapper label[for="dash-engagement"],
-#dash-community:checked~.dashboards-menu-wrapper label[for="dash-community"],
-#dash-sentiment:checked~.dashboards-menu-wrapper label[for="dash-sentiment"],
-#dash-campaigns:checked~.dashboards-menu-wrapper label[for="dash-campaigns"],
-#dash-content:checked~.dashboards-menu-wrapper label[for="dash-content"],
-#dash-nlp:checked~.dashboards-menu-wrapper label[for="dash-nlp"],
-#dash-feedback:checked~.dashboards-menu-wrapper label[for="dash-feedback"],
-#dash-keywords:checked~.dashboards-menu-wrapper label[for="dash-keywords"],
-#dash-operations:checked~.dashboards-menu-wrapper label[for="dash-operations"],
-#dash-kpis:checked~.dashboards-menu-wrapper label[for="dash-kpis"],
-#dash-reports:checked~.dashboards-menu-wrapper label[for="dash-reports"],
-#dash-custom:checked~.dashboards-menu-wrapper label[for="dash-custom"] {
-    background: var(--secondary);
-    color: white;
-    border-color: var(--secondary);
-    box-shadow: 0 2px 8px rgba(22, 160, 133, 0.4);
+/* =====================
+   NAV LINK (span — not clickable, just label)
+   ===================== */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: default;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, background 0.2s;
+    user-select: none;
 }
 
-/* Main Content Area */
+.nav-arrow {
+    font-size: 0.65rem;
+    opacity: 0.7;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+/* Highlight nav-link on hover of entire item */
+.nav-item:hover > .nav-link {
+    color: var(--text);
+    background: var(--hover-bg);
+    border-bottom-color: var(--accent);
+}
+
+.nav-item:hover .nav-arrow {
+    transform: rotate(180deg);
+}
+
+/* Active nav-link — when any of its radios is checked */
+#dash-apple-stock-prices:checked               ~ .navbar .nav-item:nth-child(1) > .nav-link,
+#dash-bitcoin-historical-market-data:checked   ~ .navbar .nav-item:nth-child(1) > .nav-link,
+#dash-global-tech-giants-us-vs-local-markets:checked ~ .navbar .nav-item:nth-child(1) > .nav-link,
+#dash-historical-gold-prices:checked           ~ .navbar .nav-item:nth-child(1) > .nav-link,
+#dash-brazil-inflation-indices:checked         ~ .navbar .nav-item:nth-child(1) > .nav-link,
+#dash-meta-stock-data:checked                  ~ .navbar .nav-item:nth-child(1) > .nav-link,
+#dash-personal-expense-analysis:checked        ~ .navbar .nav-item:nth-child(1) > .nav-link,
+#dash-sp500-stock-prices:checked               ~ .navbar .nav-item:nth-child(1) > .nav-link,
+#dash-sales-overview:checked ~ .navbar .nav-item:nth-child(2) > .nav-link,
+#dash-pipeline:checked     ~ .navbar .nav-item:nth-child(2) > .nav-link,
+#dash-performance:checked  ~ .navbar .nav-item:nth-child(2) > .nav-link,
+#dash-products:checked     ~ .navbar .nav-item:nth-child(2) > .nav-link,
+#dash-engagement:checked   ~ .navbar .nav-item:nth-child(3) > .nav-link,
+#dash-community:checked    ~ .navbar .nav-item:nth-child(3) > .nav-link,
+#dash-sentiment:checked    ~ .navbar .nav-item:nth-child(3) > .nav-link,
+#dash-campaigns:checked    ~ .navbar .nav-item:nth-child(3) > .nav-link,
+#dash-content:checked      ~ .navbar .nav-item:nth-child(4) > .nav-link,
+#dash-nlp:checked          ~ .navbar .nav-item:nth-child(4) > .nav-link,
+#dash-feedback:checked     ~ .navbar .nav-item:nth-child(4) > .nav-link,
+#dash-keywords:checked     ~ .navbar .nav-item:nth-child(4) > .nav-link,
+#dash-operations:checked   ~ .navbar .nav-item:nth-child(5) > .nav-link,
+#dash-kpis:checked         ~ .navbar .nav-item:nth-child(5) > .nav-link,
+#dash-reports:checked      ~ .navbar .nav-item:nth-child(5) > .nav-link,
+#dash-custom:checked       ~ .navbar .nav-item:nth-child(5) > .nav-link {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* =====================
+   DROPDOWN PANEL
+   — opens on hover of nav-item
+   ===================== */
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;   /* grows to fit the widest item */
+    min-width: 160px;     /* floor for very short lists */
+    background: var(--dropdown-bg);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    overflow: hidden;
+    animation: dropFadeIn 0.14s ease;
+}
+
+@keyframes dropFadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Show on hover */
+.nav-item:hover .nav-dropdown {
+    display: block;
+}
+
+/* =====================
+   DROPDOWN ITEMS (label)
+   ===================== */
+.dropdown-item {
+    display: block;
+    width: 100%;
+    color: var(--muted);
+    font-size: 0.84rem;
+    font-weight: 400;
+    text-align: left;
+    padding: 0.62rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, padding-left 0.15s;
+    border-left: 3px solid transparent;
+    user-select: none;
+}
+
+.dropdown-item:hover {
+    background: var(--hover-bg);
+    color: var(--text);
+    padding-left: 1.5rem;
+}
+
+/* Disabled dropdown item */
+.dropdown-item.disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+    text-decoration: line-through;
+    text-decoration-color: rgba(236, 240, 241, 0.35);
+    /* flex layout so badge is a real flow item → counted in max-content */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-right: 0.85rem;   /* match normal side padding */
+}
+
+.dropdown-item.disabled::after {
+    content: "Coming soon";
+    flex-shrink: 0;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #e67e22;
+    background: rgba(230, 126, 34, 0.15);
+    border: 1px solid rgba(230, 126, 34, 0.35);
+    border-radius: 4px;
+    padding: 0.15rem 0.45rem;
+    white-space: nowrap;
+}
+
+/* Active selected item */
+#dash-revenue:checked      ~ .navbar label[for="dash-revenue"],
+#dash-expenses:checked     ~ .navbar label[for="dash-expenses"],
+#dash-cashflow:checked     ~ .navbar label[for="dash-cashflow"],
+#dash-budget:checked       ~ .navbar label[for="dash-budget"],
+#dash-sales-overview:checked ~ .navbar label[for="dash-sales-overview"],
+#dash-pipeline:checked     ~ .navbar label[for="dash-pipeline"],
+#dash-performance:checked  ~ .navbar label[for="dash-performance"],
+#dash-products:checked     ~ .navbar label[for="dash-products"],
+#dash-engagement:checked   ~ .navbar label[for="dash-engagement"],
+#dash-community:checked    ~ .navbar label[for="dash-community"],
+#dash-sentiment:checked    ~ .navbar label[for="dash-sentiment"],
+#dash-campaigns:checked    ~ .navbar label[for="dash-campaigns"],
+#dash-content:checked      ~ .navbar label[for="dash-content"],
+#dash-nlp:checked          ~ .navbar label[for="dash-nlp"],
+#dash-feedback:checked     ~ .navbar label[for="dash-feedback"],
+#dash-keywords:checked     ~ .navbar label[for="dash-keywords"],
+#dash-operations:checked   ~ .navbar label[for="dash-operations"],
+#dash-kpis:checked         ~ .navbar label[for="dash-kpis"],
+#dash-reports:checked      ~ .navbar label[for="dash-reports"],
+#dash-custom:checked       ~ .navbar label[for="dash-custom"] {
+    background: var(--accent-dim);
+    color: var(--accent);
+    border-left-color: var(--accent);
+    font-weight: 600;
+}
+
+/* =====================
+   MAIN CONTENT — fills remaining height
+   ===================== */
 .main-content {
-    max-width: 1600px;
-    width: 98%;
-    margin: 1rem auto;
-    padding: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .dashboard-container {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    flex: 1 1 auto;
     overflow: hidden;
-    min-height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    flex-direction: column;
+    width: 100%;
+    height: 100%;
     position: relative;
-    transition: all 0.3s ease;
+    background: #0f1923;
 }
 
-/* Fullscreen buttons and logic removed (relying on Power BI iframe native fullscreen) */
-
+/* =====================
+   PLACEHOLDER
+   ===================== */
 .placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #95a5a6;
+    color: #4a6070;
+    padding: 2rem;
 }
 
-.placeholder-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
+.placeholder-icon { font-size: 3rem; margin-bottom: 1rem; }
 
 .placeholder-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    color: #5a7080;
 }
 
 .placeholder-info {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    color: #4a6070;
 }
 
-/* Hide Placeholder when dashboard holds */
-#cat-finance:checked~#dash-revenue:checked~.main-content .placeholder,
-#cat-finance:checked~#dash-expenses:checked~.main-content .placeholder,
-#cat-finance:checked~#dash-cashflow:checked~.main-content .placeholder,
-#cat-finance:checked~#dash-budget:checked~.main-content .placeholder,
-#cat-sales:checked~#dash-sales-overview:checked~.main-content .placeholder,
-#cat-sales:checked~#dash-pipeline:checked~.main-content .placeholder,
-#cat-sales:checked~#dash-performance:checked~.main-content .placeholder,
-#cat-sales:checked~#dash-products:checked~.main-content .placeholder,
-#cat-social:checked~#dash-engagement:checked~.main-content .placeholder,
-#cat-social:checked~#dash-community:checked~.main-content .placeholder,
-#cat-social:checked~#dash-sentiment:checked~.main-content .placeholder,
-#cat-social:checked~#dash-campaigns:checked~.main-content .placeholder,
-#cat-textual:checked~#dash-content:checked~.main-content .placeholder,
-#cat-textual:checked~#dash-nlp:checked~.main-content .placeholder,
-#cat-textual:checked~#dash-feedback:checked~.main-content .placeholder,
-#cat-textual:checked~#dash-keywords:checked~.main-content .placeholder,
-#cat-others:checked~#dash-operations:checked~.main-content .placeholder,
-#cat-others:checked~#dash-kpis:checked~.main-content .placeholder,
-#cat-others:checked~#dash-reports:checked~.main-content .placeholder,
-#cat-others:checked~#dash-custom:checked~.main-content .placeholder {
+/* Hide placeholder when any dashboard is selected */
+#dash-apple-stock-prices:checked               ~ .main-content .placeholder,
+#dash-bitcoin-historical-market-data:checked   ~ .main-content .placeholder,
+#dash-global-tech-giants-us-vs-local-markets:checked ~ .main-content .placeholder,
+#dash-historical-gold-prices:checked           ~ .main-content .placeholder,
+#dash-brazil-inflation-indices:checked         ~ .main-content .placeholder,
+#dash-meta-stock-data:checked                  ~ .main-content .placeholder,
+#dash-personal-expense-analysis:checked        ~ .main-content .placeholder,
+#dash-sp500-stock-prices:checked               ~ .main-content .placeholder,
+#dash-sales-overview:checked ~ .main-content .placeholder,
+#dash-pipeline:checked     ~ .main-content .placeholder,
+#dash-performance:checked  ~ .main-content .placeholder,
+#dash-products:checked     ~ .main-content .placeholder,
+#dash-engagement:checked   ~ .main-content .placeholder,
+#dash-community:checked    ~ .main-content .placeholder,
+#dash-sentiment:checked    ~ .main-content .placeholder,
+#dash-campaigns:checked    ~ .main-content .placeholder,
+#dash-content:checked      ~ .main-content .placeholder,
+#dash-nlp:checked          ~ .main-content .placeholder,
+#dash-feedback:checked     ~ .main-content .placeholder,
+#dash-keywords:checked     ~ .main-content .placeholder,
+#dash-operations:checked   ~ .main-content .placeholder,
+#dash-kpis:checked         ~ .main-content .placeholder,
+#dash-reports:checked      ~ .main-content .placeholder,
+#dash-custom:checked       ~ .main-content .placeholder {
     display: none;
 }
 
-/* Dashboard-specific content */
+/* =====================
+   DASHBOARD CONTENT PANELS
+   ===================== */
 .dashboard-content {
     display: none;
     width: 100%;
     height: 100%;
+    flex: 1 1 auto;
 }
 
-/* Show Content combinations */
-#cat-finance:checked~#dash-revenue:checked~.main-content #content-revenue,
-#cat-finance:checked~#dash-expenses:checked~.main-content #content-expenses,
-#cat-finance:checked~#dash-cashflow:checked~.main-content #content-cashflow,
-#cat-finance:checked~#dash-budget:checked~.main-content #content-budget,
-#cat-sales:checked~#dash-sales-overview:checked~.main-content #content-sales-overview,
-#cat-sales:checked~#dash-pipeline:checked~.main-content #content-pipeline,
-#cat-sales:checked~#dash-performance:checked~.main-content #content-performance,
-#cat-sales:checked~#dash-products:checked~.main-content #content-products,
-#cat-social:checked~#dash-engagement:checked~.main-content #content-engagement,
-#cat-social:checked~#dash-community:checked~.main-content #content-community,
-#cat-social:checked~#dash-sentiment:checked~.main-content #content-sentiment,
-#cat-social:checked~#dash-campaigns:checked~.main-content #content-campaigns,
-#cat-textual:checked~#dash-content:checked~.main-content #content-content,
-#cat-textual:checked~#dash-nlp:checked~.main-content #content-nlp,
-#cat-textual:checked~#dash-feedback:checked~.main-content #content-feedback,
-#cat-textual:checked~#dash-keywords:checked~.main-content #content-keywords,
-#cat-others:checked~#dash-operations:checked~.main-content #content-operations,
-#cat-others:checked~#dash-kpis:checked~.main-content #content-kpis,
-#cat-others:checked~#dash-reports:checked~.main-content #content-reports,
-#cat-others:checked~#dash-custom:checked~.main-content #content-custom {
-    display: block;
+/* Show the selected panel */
+#dash-apple-stock-prices:checked               ~ .main-content #content-apple-stock-prices,
+#dash-bitcoin-historical-market-data:checked   ~ .main-content #content-bitcoin-historical-market-data,
+#dash-global-tech-giants-us-vs-local-markets:checked ~ .main-content #content-global-tech-giants-us-vs-local-markets,
+#dash-historical-gold-prices:checked           ~ .main-content #content-historical-gold-prices,
+#dash-brazil-inflation-indices:checked         ~ .main-content #content-brazil-inflation-indices,
+#dash-meta-stock-data:checked                  ~ .main-content #content-meta-stock-data,
+#dash-personal-expense-analysis:checked        ~ .main-content #content-personal-expense-analysis,
+#dash-sp500-stock-prices:checked               ~ .main-content #content-sp500-stock-prices,
+#dash-sales-overview:checked ~ .main-content #content-sales-overview,
+#dash-pipeline:checked     ~ .main-content #content-pipeline,
+#dash-performance:checked  ~ .main-content #content-performance,
+#dash-products:checked     ~ .main-content #content-products,
+#dash-engagement:checked   ~ .main-content #content-engagement,
+#dash-community:checked    ~ .main-content #content-community,
+#dash-sentiment:checked    ~ .main-content #content-sentiment,
+#dash-campaigns:checked    ~ .main-content #content-campaigns,
+#dash-content:checked      ~ .main-content #content-content,
+#dash-nlp:checked          ~ .main-content #content-nlp,
+#dash-feedback:checked     ~ .main-content #content-feedback,
+#dash-keywords:checked     ~ .main-content #content-keywords,
+#dash-operations:checked   ~ .main-content #content-operations,
+#dash-kpis:checked         ~ .main-content #content-kpis,
+#dash-reports:checked      ~ .main-content #content-reports,
+#dash-custom:checked       ~ .main-content #content-custom {
+    display: flex;
 }
 
+/* =====================
+   IFRAME — fills the full panel
+   ===================== */
 .dashboard-iframe {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
     border: none;
-    border-radius: 12px;
     display: block;
-    margin: 0;
-    padding: 0;
 }
 
+/* =====================
+   FALLBACK (placeholder inside panel)
+   ===================== */
 .dashboard-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 2rem;
     width: 100%;
+    color: #5a7080;
 }
 
 .dashboard-fallback h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
 }
 
-.dashboard-fallback p {
-    color: #7f8c8d;
-    margin-bottom: 0.5rem;
-}
+.dashboard-fallback p  { margin-bottom: 0.4rem; font-size: 0.9rem; }
+.dashboard-fallback small { font-size: 0.8rem; color: #4a6070; }
 
-.dashboard-fallback small {
-    color: #95a5a6;
-    display: block;
-    margin-bottom: 1rem;
-}
-
-/* Footer */
-footer {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-    opacity: 0.95;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-content {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* Responsive */
+/* =====================
+   RESPONSIVE
+   ===================== */
 @media (max-width: 768px) {
-    header {
-        padding: 1.5rem;
-    }
-
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-    }
-
-    .categories-menu,
-    .dashboards-menu {
-        padding: 0.75rem 1rem;
-        justify-content: center;
-    }
-
-    .category-label,
-    .dashboard-label {
-        font-size: 0.85rem;
-        padding: 0.5rem 0.8rem;
-    }
-
-    .dashboard-iframe {
-        height: 500px;
-    }
-
-    .main-content {
-        margin: 1rem auto;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .categories-menu,
-    .dashboards-menu {
-        padding: 0.5rem;
-        gap: 0.25rem;
-    }
-
-    .category-label,
-    .dashboard-label {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.6rem;
-    }
-
-    .dashboard-container {
-        padding: 1rem;
-        min-height: 400px;
-    }
-
-    .dashboard-iframe {
-        height: 350px;
-    }
+    .navbar { height: auto; flex-wrap: wrap; padding: 0.4rem 1rem; gap: 0.25rem; }
+    .nav-brand { border-right: none; padding-right: 0; margin-right: 0; }
+    .nav-menu  { flex-wrap: wrap; height: auto; width: 100%; padding-bottom: 0.3rem; }
+    .nav-item  { height: auto; }
+    .nav-link  { height: auto; padding: 0.35rem 0.7rem; border-bottom: none; border-radius: 4px; }
+    .nav-dropdown { position: fixed; top: auto; left: 1rem; right: 1rem; min-width: unset; }
 }

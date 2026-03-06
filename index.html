@@ -70,8 +70,8 @@
     <!-- Dashboards Menus -->
     <div class="dashboards-menu-wrapper">
         <div class="dashboards-menu" id="menu-finance">
-            <label for="dash-revenue" class="dashboard-label">Apple Stock Prices</label>
-            <div class="dashboard-label disabled" data-tooltip="Available Soon">Expenses & Costs 🔒</div>
+            <label for="dash-revenue" class="dashboard-label">Revenue & Billing</label>
+            <label for="dash-expenses" class="dashboard-label">Expenses & Costs</label>
             <label for="dash-cashflow" class="dashboard-label">Cash Flow</label>
             <label for="dash-budget" class="dashboard-label">Budget Analysis</label>
         </div>
@@ -105,7 +105,7 @@
     <main class="main-content">
         <div class="dashboard-container">
 
-            <!-- Fullscreen controls have been removed: using Power BI native button -->
+            <!-- Fullscreen buttons were removed (power bi has native feature) -->
 
             <div class="placeholder">
                 <div class="placeholder-icon">👆</div>
@@ -113,90 +113,190 @@
                 <div class="placeholder-info">Currently, no dashboard is selected in this category</div>
             </div>
 
-            <!-- Dynamic Dashboard Content Container -->
-            <div id="dynamic-content-container"></div>
+            <!-- ========================================== -->
+            <!-- 💰 FINANCE DASHBOARDS AREA                 -->
+            <!-- Add your IFRAMES here inside each section  -->
+            <!-- ========================================== -->
+            <div class="dashboard-content" id="content-revenue">
+                <iframe title="Apple Stock Prices" class="dashboard-iframe"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMDAxYWQ2MTAtNGVhMS00MTUzLTg4MTMtY2MyMGViMzcwNjQxIiwidCI6ImJiOGI4MzRiLTM2NjktNGFiMy04NjhkLTYyM2U3YjRmMjRlZCJ9"
+                    allowFullScreen="true"></iframe>
+            </div>
+            <div class="dashboard-content" id="content-expenses">
+                <div class="dashboard-fallback">
+                    <h3>Expenses & Costs</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-cashflow">
+                <div class="dashboard-fallback">
+                    <h3>Cash Flow</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-budget">
+                <div class="dashboard-fallback">
+                    <h3>Budget Analysis</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- 📊 SALES DASHBOARDS AREA                   -->
+            <!-- Add your IFRAMES here inside each section  -->
+            <!-- ========================================== -->
+            <div class="dashboard-content" id="content-sales-overview">
+                <div class="dashboard-fallback">
+                    <h3>Sales Overview</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-pipeline">
+                <div class="dashboard-fallback">
+                    <h3>Sales Pipeline</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-performance">
+                <div class="dashboard-fallback">
+                    <h3>Performance by Region</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-products">
+                <div class="dashboard-fallback">
+                    <h3>Product Analysis</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- 🤝 SOCIAL ISSUES DASHBOARDS AREA           -->
+            <!-- Add your IFRAMES here inside each section  -->
+            <!-- ========================================== -->
+            <div class="dashboard-content" id="content-engagement">
+                <div class="dashboard-fallback">
+                    <h3>Social Engagement</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-community">
+                <div class="dashboard-fallback">
+                    <h3>Community Analysis</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-sentiment">
+                <div class="dashboard-fallback">
+                    <h3>Sentiment Analysis</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-campaigns">
+                <div class="dashboard-fallback">
+                    <h3>Campaign & Impact</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- 📝 TEXTUAL DASHBOARDS AREA                 -->
+            <!-- Add your IFRAMES here inside each section  -->
+            <!-- ========================================== -->
+            <div class="dashboard-content" id="content-content">
+                <div class="dashboard-fallback">
+                    <h3>Content Analysis</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-nlp">
+                <div class="dashboard-fallback">
+                    <h3>Natural Language Processing</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-feedback">
+                <div class="dashboard-fallback">
+                    <h3>Feedback Analysis</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-keywords">
+                <div class="dashboard-fallback">
+                    <h3>Keywords & Topics</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- ⚙️  OTHERS DASHBOARDS AREA                 -->
+            <!-- Add your IFRAMES here inside each section  -->
+            <!-- ========================================== -->
+            <div class="dashboard-content" id="content-operations">
+                <div class="dashboard-fallback">
+                    <h3>General Operations</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-kpis">
+                <div class="dashboard-fallback">
+                    <h3>Main KPIs</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-reports">
+                <div class="dashboard-fallback">
+                    <h3>Executive Reports</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
+            <div class="dashboard-content" id="content-custom">
+                <div class="dashboard-fallback">
+                    <h3>Custom Dashboards</h3>
+                    <p>Your Power BI dashboard will be displayed here.</p>
+                    <small>Add an iframe with the share link of your Power BI dashboard below this section in the
+                        code.</small>
+                </div>
+            </div>
 
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Power Pills - Interactive Visualizations. All rights reserved.</p>
-            <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">Powered by Power BI</p>
-        </div>
-    </footer>
-
-    <!-- Component Loader Script -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const container = document.getElementById("dynamic-content-container");
-            const dashboardGlobalRadios = document.querySelectorAll('input[name="dashboard"]');
-
-            // Map each dashboard ID to its corresponding component file
-            const componentMap = {
-                "dash-revenue": "finance.html",
-                "dash-expenses": "finance.html",
-                "dash-cashflow": "finance.html",
-                "dash-budget": "finance.html",
-
-                "dash-sales-overview": "sales.html",
-                "dash-pipeline": "sales.html",
-                "dash-performance": "sales.html",
-                "dash-products": "sales.html",
-
-                "dash-engagement": "social.html",
-                "dash-community": "social.html",
-                "dash-sentiment": "social.html",
-                "dash-campaigns": "social.html",
-
-                "dash-content": "textual.html",
-                "dash-nlp": "textual.html",
-                "dash-feedback": "textual.html",
-                "dash-keywords": "textual.html",
-
-                "dash-operations": "others.html",
-                "dash-kpis": "others.html",
-                "dash-reports": "others.html",
-                "dash-custom": "others.html"
-            };
-
-            // Keep track of loaded files
-            const loadedComponents = new Set();
-
-            // Function to load the component file if not loaded yet
-            const loadComponent = async (file) => {
-                if (!file || loadedComponents.has(file)) return;
-
-                try {
-                    const response = await fetch(`components/${file}`);
-                    if (response.ok) {
-                        const html = await response.text();
-                        container.insertAdjacentHTML('beforeend', html);
-                        loadedComponents.add(file);
-                    } else {
-                        console.error(`Failed to load ${file}`);
-                    }
-                } catch (err) {
-                    console.error(`Error loading component:`, err);
-                }
-            };
-
-            // Listen to dashboard selections
-            dashboardGlobalRadios.forEach(radio => {
-                radio.addEventListener('change', (e) => {
-                    const dashboardId = e.target.id;
-                    const componentFile = componentMap[dashboardId];
-                    loadComponent(componentFile);
-                });
-            });
-
-            // Pre-load the finance component since the "Finance" category is checked by default
-            // Optional: you can fetch it immediately so it's ready when the user clicks the first dashboard.
-            loadComponent("finance.html");
-        });
-    </script>
-    <!-- End of dynamic-content-container was placed earlier -->
 
     <!-- Footer -->
     <footer>

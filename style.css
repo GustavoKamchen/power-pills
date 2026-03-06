@@ -220,70 +220,7 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Fullscreen Controls */
-.dashboard-controls {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10;
-}
-
-.btn-fullscreen,
-.btn-exit-fullscreen {
-    cursor: pointer;
-    background: rgba(44, 62, 80, 0.1);
-    border-radius: 4px;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-    transition: background 0.2s, color 0.2s;
-}
-
-.btn-fullscreen:hover,
-.btn-exit-fullscreen:hover {
-    background: var(--primary);
-    color: white;
-}
-
-.btn-exit-fullscreen {
-    display: none;
-}
-
-/* Fullscreen Logic */
-#fullscreen-toggle:checked~.main-content .dashboard-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9999;
-    border-radius: 0;
-    margin: 0;
-}
-
-#fullscreen-toggle:checked~.main-content .dashboard-container .dashboard-content {
-    width: 100%;
-    height: 100%;
-}
-
-#fullscreen-toggle:checked~.main-content .dashboard-container .dashboard-iframe {
-    height: calc(100vh - 4rem);
-    width: 100%;
-}
-
-#fullscreen-toggle:checked~.main-content .dashboard-container .dashboard-fallback {
-    display: none;
-}
-
-#fullscreen-toggle:checked~.main-content .btn-fullscreen {
-    display: none;
-}
-
-#fullscreen-toggle:checked~.main-content .btn-exit-fullscreen {
-    display: flex;
-}
+/* Fullscreen buttons and logic removed (relying on Power BI iframe native fullscreen) */
 
 .placeholder {
     display: flex;

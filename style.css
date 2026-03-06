@@ -40,9 +40,6 @@ header {
     color: white;
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 .header-content {
@@ -171,6 +168,45 @@ header {
     transform: translateY(-1px);
 }
 
+/* Disabled Dashboard Button */
+.dashboard-label.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    position: relative;
+}
+
+/* Custom CSS Tooltip */
+.dashboard-label.disabled::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 110%;
+    /* Place tooltip above */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.dashboard-label.disabled:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dashboard-label.disabled:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: none;
+}
+
 /* Dashboard Selection Styling */
 #dash-revenue:checked~.dashboards-menu-wrapper label[for="dash-revenue"],
 #dash-expenses:checked~.dashboards-menu-wrapper label[for="dash-expenses"],
@@ -200,9 +236,10 @@ header {
 
 /* Main Content Area */
 .main-content {
-    max-width: 1400px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 1600px;
+    width: 98%;
+    margin: 1rem auto;
+    padding: 0;
 }
 
 .dashboard-container {
@@ -210,11 +247,11 @@ header {
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    min-height: 600px;
+    min-height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 0;
     flex-direction: column;
     position: relative;
     transition: all 0.3s ease;
@@ -305,9 +342,12 @@ header {
 
 .dashboard-iframe {
     width: 100%;
-    height: 650px;
+    aspect-ratio: 16 / 9;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
 .dashboard-fallback {

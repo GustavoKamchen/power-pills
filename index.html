@@ -11,6 +11,7 @@
 <body>
 
     <!-- ===== HIDDEN RADIO INPUTS — Dashboard Selection (CSS-only logic) ===== -->
+    <input type="radio" id="dash-home" name="dashboard" class="global-radio" checked>
     <!-- Finance -->
     <input type="radio" id="dash-apple-stock-prices" name="dashboard" class="global-radio">
     <input type="radio" id="dash-bitcoin-historical-market-data" name="dashboard" class="global-radio">
@@ -49,7 +50,7 @@
         <!-- Logo / Brand -->
         <div class="nav-brand">
             <span class="nav-logo">📊</span>
-            <span class="nav-title">Power Pills</span>
+            <label for="dash-home" class="nav-title">Power Pills</label>
         </div>
 
         <!-- Category Items with Hover Dropdowns (labels = radio selectors) -->
@@ -127,57 +128,162 @@
             <!-- 💰 FINANCE DASHBOARDS AREA                 -->
             <!-- ========================================== -->
             <div class="dashboard-content" id="content-apple-stock-prices">
-                <iframe title="Apple Stock Prices" class="dashboard-iframe"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiMDAxYWQ2MTAtNGVhMS00MTUzLTg4MTMtY2MyMGViMzcwNjQxIiwidCI6ImJiOGI4MzRiLTM2NjktNGFiMy04NjhkLTYyM2U3YjRmMjRlZCJ9"
-                    allowFullScreen="true"></iframe>
+                <div class="dashboard-page">
+                    <iframe title="Apple Stock Prices" class="dashboard-iframe"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiMDAxYWQ2MTAtNGVhMS00MTUzLTg4MTMtY2MyMGViMzcwNjQxIiwidCI6ImJiOGI4MzRiLTM2NjktNGFiMy04NjhkLTYyM2U3YjRmMjRlZCJ9"
+                        allowFullScreen="true"></iframe>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header">
+                        <h2>Apple Stock Prices</h2>
+                        <p>Dashboard Analysis & Details</p>
+                    </div>
+                    <div class="detail-body">
+                        <p>This section provides a detailed view of the Apple Stock Prices dashboard. Here you can find additional context, data sources, and key insights extracted from the visualizations above.</p>
+                        <p>Scroll back up to return to the interactive dashboard.</p>
+                    </div>
+                </div>
             </div>
             <div class="dashboard-content" id="content-bitcoin-historical-market-data">
-                <div class="dashboard-fallback">
-                    <h3>Bitcoin Historical Market Data</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Bitcoin Historical Market Data</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header">
+                        <h2>Bitcoin Historical Market Data</h2>
+                        <p>Dashboard Analysis & Details</p>
+                    </div>
+                    <div class="detail-body">
+                        <p>Detailed analysis for Bitcoin Historical Market Data will be shown here.</p>
+                    </div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-brazil-inflation-indices">
-                <div class="dashboard-fallback">
-                    <h3>Brazil Inflation Indices</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Brazil Inflation Indices</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header">
+                        <h2>Brazil Inflation Indices</h2>
+                        <p>Dashboard Analysis & Details</p>
+                    </div>
+                    <div class="detail-body">
+                        <p>Detailed analysis for Brazil Inflation Indices will be shown here.</p>
+                    </div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-global-tech-giants-us-vs-local-markets">
-                <div class="dashboard-fallback">
-                    <h3>Global Tech Giants - US vs Local Markets</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Global Tech Giants - US vs Local Markets</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header">
+                        <h2>Global Tech Giants</h2>
+                        <p>Dashboard Analysis & Details</p>
+                    </div>
+                    <div class="detail-body">
+                        <p>Detailed analysis for Global Tech Giants will be shown here.</p>
+                    </div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-historical-gold-prices">
-                <div class="dashboard-fallback">
-                    <h3>Historical Gold Prices</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Historical Gold Prices</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header">
+                        <h2>Historical Gold Prices</h2>
+                        <p>Dashboard Analysis & Details</p>
+                    </div>
+                    <div class="detail-body">
+                        <p>Detailed analysis for Historical Gold Prices will be shown here.</p>
+                    </div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-meta-stock-data">
-                <div class="dashboard-fallback">
-                    <h3>Meta Stock Data</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Meta Stock Data</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header">
+                        <h2>Meta Stock Data</h2>
+                        <p>Dashboard Analysis & Details</p>
+                    </div>
+                    <div class="detail-body">
+                        <p>Detailed analysis for Meta Stock Data will be shown here.</p>
+                    </div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-personal-expense-analysis">
-                <div class="dashboard-fallback">
-                    <h3>Personal Expense Analysis</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Personal Expense Analysis</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header">
+                        <h2>Personal Expense Analysis</h2>
+                        <p>Dashboard Analysis & Details</p>
+                    </div>
+                    <div class="detail-body">
+                        <p>Detailed analysis for Personal Expense Analysis will be shown here.</p>
+                    </div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-sp500-stock-prices">
-                <div class="dashboard-fallback">
-                    <h3>S&amp;P 500 Stock Prices</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>S&amp;P 500 Stock Prices</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header">
+                        <h2>S&amp;P 500 Stock Prices</h2>
+                        <p>Dashboard Analysis & Details</p>
+                    </div>
+                    <div class="detail-body">
+                        <p>Detailed analysis for S&amp;P 500 Stock Prices will be shown here.</p>
+                    </div>
                 </div>
             </div>
 
@@ -185,24 +291,48 @@
             <!-- 📊 SALES DASHBOARDS AREA                   -->
             <!-- ========================================== -->
             <div class="dashboard-content" id="content-amazon-sales">
-                <div class="dashboard-fallback">
-                    <h3>Amazon Sales</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Amazon Sales</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Amazon Sales</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Amazon Sales.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-bmw-global-sales">
-                <div class="dashboard-fallback">
-                    <h3>BMW Global Sales</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>BMW Global Sales</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>BMW Global Sales</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for BMW Global Sales.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-chocolate-sales">
-                <div class="dashboard-fallback">
-                    <h3>Chocolate Sales</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Chocolate Sales</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Chocolate Sales</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Chocolate Sales.</p></div>
                 </div>
             </div>
 
@@ -210,45 +340,93 @@
             <!-- 🤝 SOCIAL ISSUES DASHBOARDS AREA           -->
             <!-- ========================================== -->
             <div class="dashboard-content" id="content-census-income">
-                <div class="dashboard-fallback">
-                    <h3>Census Income</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Census Income</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Census Income</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Census Income.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-global-land-animal-slaughter">
-                <div class="dashboard-fallback">
-                    <h3>Global Land Animal Slaughter</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Global Land Animal Slaughter</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Global Land Animal Slaughter</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Global Land Animal Slaughter.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-global-water-consumption">
-                <div class="dashboard-fallback">
-                    <h3>Global Water Consumption</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Global Water Consumption</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Global Water Consumption</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Global Water Consumption.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-housing-price">
-                <div class="dashboard-fallback">
-                    <h3>Housing Price</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Housing Price</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Housing Price</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Housing Price.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-mental-health-substance-use-canada">
-                <div class="dashboard-fallback">
-                    <h3>Mental Health and Substance Use in Canada</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Mental Health and Substance Use in Canada</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Mental Health in Canada</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Mental Health in Canada.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-share-population-extreme-poverty">
-                <div class="dashboard-fallback">
-                    <h3>Share of Population Living in Extreme Poverty</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Share of Population Living in Extreme Poverty</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Extreme Poverty</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Extreme Poverty.</p></div>
                 </div>
             </div>
 
@@ -256,31 +434,63 @@
             <!-- 📝 TEXTUAL DASHBOARDS AREA                 -->
             <!-- ========================================== -->
             <div class="dashboard-content" id="content-animal-condition">
-                <div class="dashboard-fallback">
-                    <h3>Animal Condition</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Animal Condition</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Animal Condition</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Animal Condition.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-global-manufacturing-constraints">
-                <div class="dashboard-fallback">
-                    <h3>Global Manufacturing Constraints</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Global Manufacturing Constraints</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Global Manufacturing Constraints</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Global Manufacturing Constraints.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-healthcare-insurance">
-                <div class="dashboard-fallback">
-                    <h3>Healthcare Insurance</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Healthcare Insurance</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Healthcare Insurance</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Healthcare Insurance.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-online-course-engagement">
-                <div class="dashboard-fallback">
-                    <h3>Online Course Engagement</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Online Course Engagement</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Online Course Engagement</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Online Course Engagement.</p></div>
                 </div>
             </div>
 
@@ -288,45 +498,93 @@
             <!-- ⚙️  OTHERS DASHBOARDS AREA                 -->
             <!-- ========================================== -->
             <div class="dashboard-content" id="content-cybersecurity-threat-detection">
-                <div class="dashboard-fallback">
-                    <h3>Cybersecurity Threat Detection</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Cybersecurity Threat Detection</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Cybersecurity</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Cybersecurity.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-global-ads-performance">
-                <div class="dashboard-fallback">
-                    <h3>Global Ads Performance</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Global Ads Performance</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Global Ads Performance</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Global Ads Performance.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-grammy-award-winners">
-                <div class="dashboard-fallback">
-                    <h3>Grammy Award Winners</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Grammy Award Winners</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Grammy Award Winners</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Grammy Award Winners.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-loan-approval">
-                <div class="dashboard-fallback">
-                    <h3>Loan Approval</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Loan Approval</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Loan Approval</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Loan Approval.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-most-downloaded-android-apps">
-                <div class="dashboard-fallback">
-                    <h3>Most Downloaded Android Apps</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>Most Downloaded Android Apps</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>Android Apps</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for Android Apps.</p></div>
                 </div>
             </div>
             <div class="dashboard-content" id="content-the-movies">
-                <div class="dashboard-fallback">
-                    <h3>The Movies</h3>
-                    <p>Your Power BI dashboard will be displayed here.</p>
-                    <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                <div class="dashboard-page">
+                    <div class="dashboard-fallback">
+                        <h3>The Movies</h3>
+                        <p>Your Power BI dashboard will be displayed here.</p>
+                        <small>Add an iframe with the share link of your Power BI dashboard.</small>
+                    </div>
+                    <div class="scroll-indicator-bar down">Scroll down for details <span>▾</span></div>
+                </div>
+                <div class="dashboard-page dashboard-details">
+                    <div class="scroll-indicator-bar up"><span>▴</span> Scroll up for dashboard</div>
+                    <div class="detail-header"><h2>The Movies</h2><p>Details</p></div>
+                    <div class="detail-body"><p>Test text for The Movies.</p></div>
                 </div>
             </div>
 

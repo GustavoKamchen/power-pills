@@ -1,0 +1,194 @@
+[
+    {
+        "id": "dash-amazon-sales",
+        "title": "Amazon Sales",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Amazon sales performance dashboard (Placeholder)"
+    },
+    {
+        "id": "dash-apple-stock-prices",
+        "title": "Apple Stock Prices",
+        "category": "Business & Economics",
+        "iframeSrc": "https://app.powerbi.com/view?r=eyJrIjoiZjc3ZTYzZDgtNmRkZC00YTg1LWEwMjEtY2NlYjIyOTcyY2U4IiwidCI6ImJiOGI4MzRiLTM2NjktNGFiMy04NjhkLTYyM2U3YjRmMjRlZCJ9",
+        "description": "An interactive dashboard visualizing Apple Inc. (AAPL) stock price history, trading volume, and market trends over time."
+    },
+    {
+        "id": "dash-bitcoin-historical-market-data",
+        "title": "Bitcoin Historical Market Data",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Bitcoin historical market data analysis (Placeholder)"
+    },
+    {
+        "id": "dash-bmw-global-sales",
+        "title": "BMW Global Sales",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "BMW global sales distribution (Placeholder)"
+    },
+    {
+        "id": "dash-brazil-inflation-indices",
+        "title": "Brazil Inflation Indices",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Brazilian inflation index tracker (Placeholder)"
+    },
+    {
+        "id": "dash-census-income",
+        "title": "Census Income",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Census income distribution modeling (Placeholder)"
+    },
+    {
+        "id": "dash-chocolate-sales",
+        "title": "Chocolate Sales",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Global chocolate sales data (Placeholder)"
+    },
+    {
+        "id": "dash-global-ads-performance",
+        "title": "Global Ads Performance",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Performance tracking for global advertising campaigns (Placeholder)"
+    },
+    {
+        "id": "dash-global-manufacturing-constraints",
+        "title": "Global Manufacturing Constraints",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Analysis of global supply chain and manufacturing delays (Placeholder)"
+    },
+    {
+        "id": "dash-historical-gold-prices",
+        "title": "Historical Gold Prices",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Historical gold price tracking (Placeholder)"
+    },
+    {
+        "id": "dash-housing-price",
+        "title": "Housing Price",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Real estate housing price analysis (Placeholder)"
+    },
+    {
+        "id": "dash-loan-approval",
+        "title": "Loan Approval",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Loan approval and risk analysis dashboard (Placeholder)"
+    },
+    {
+        "id": "dash-meta-stock-data",
+        "title": "Meta Stock Data",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Meta Platforms Inc. stock price and volume history (Placeholder)"
+    },
+    {
+        "id": "dash-personal-expense-analysis",
+        "title": "Personal Expense Analysis",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Personal finance and expense tracking overview (Placeholder)"
+    },
+    {
+        "id": "dash-share-population-extreme-poverty",
+        "title": "Share of Population Living in Extreme Poverty",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "Global poverty index tracker (Placeholder)"
+    },
+    {
+        "id": "dash-sp500-stock-prices",
+        "title": "S&P 500 Stock Prices",
+        "category": "Business & Economics",
+        "iframeSrc": "",
+        "description": "S&P 500 index historical tracker (Placeholder)"
+    },
+    
+    {
+        "id": "dash-grammy-award-winners",
+        "title": "Grammy Award Winners",
+        "category": "Entertainment",
+        "iframeSrc": "",
+        "description": "Grammy award winners historical database (Placeholder)"
+    },
+    {
+        "id": "dash-the-movies",
+        "title": "The Movies",
+        "category": "Entertainment",
+        "iframeSrc": "",
+        "description": "Movie dataset and box office tracker (Placeholder)"
+    },
+    
+    {
+        "id": "dash-animal-condition",
+        "title": "Animal Condition",
+        "category": "Society & Environment",
+        "iframeSrc": "",
+        "description": "Animal conditions and welfare tracker (Placeholder)"
+    },
+    {
+        "id": "dash-global-land-animal-slaughter",
+        "title": "Global Land Animal Slaughter",
+        "category": "Society & Environment",
+        "iframeSrc": "",
+        "description": "Analysis of global livestock and animal slaughter statistics (Placeholder)"
+    },
+    {
+        "id": "dash-global-water-consumption",
+        "title": "Global Water Consumption",
+        "category": "Society & Environment",
+        "iframeSrc": "",
+        "description": "Global water resource usage map (Placeholder)"
+    },
+    {
+        "id": "dash-healthcare-insurance",
+        "title": "Healthcare Insurance",
+        "category": "Society & Environment",
+        "iframeSrc": "",
+        "description": "Healthcare insurance coverage and cost analysis (Placeholder)"
+    },
+    {
+        "id": "dash-mental-health-substance-use-canada",
+        "title": "Mental Health and Substance Use in Canada",
+        "category": "Society & Environment",
+        "iframeSrc": "",
+        "description": "Data tracking mental health and substance abuse issues in Canada (Placeholder)"
+    },
+
+    {
+        "id": "dash-cybersecurity-threat-detection",
+        "title": "Cybersecurity Threat Detection",
+        "category": "Technology & Digital",
+        "iframeSrc": "",
+        "description": "Global cybersecurity threat and incident tracker (Placeholder)"
+    },
+    {
+        "id": "dash-global-tech-giants-us-vs-local-markets",
+        "title": "Global Tech Giants - US vs Local Markets",
+        "category": "Technology & Digital",
+        "iframeSrc": "",
+        "description": "Market share comparison of global tech companies (Placeholder)"
+    },
+    {
+        "id": "dash-most-downloaded-android-apps",
+        "title": "Most Downloaded Android Apps",
+        "category": "Technology & Digital",
+        "iframeSrc": "",
+        "description": "Google Play Store app download leaderboard (Placeholder)"
+    },
+    {
+        "id": "dash-online-course-engagement",
+        "title": "Online Course Engagement",
+        "category": "Technology & Digital",
+        "iframeSrc": "",
+        "description": "E-learning platform engagement statistics (Placeholder)"
+    }
+]

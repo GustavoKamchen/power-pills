@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Pills</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- ===== COMPACT NAVBAR ===== -->
+        <nav class="navbar">
+            <!-- Logo / Brand -->
+            <a href="#" class="nav-brand" id="brand-link">
+                <span class="nav-logo">📊</span>
+                <span class="nav-title">Power Pills</span>
+            </a>
+
+            <!-- Category Items (Injected by JS) -->
+            <ul class="nav-menu" id="nav-menu">
+                <!-- Dynamically populated from dashboards.json -->
+            </ul>
+        </nav>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+            <div class="dashboard-container" id="dashboard-container">
+                
+                <!-- Placeholder shown when no dashboard is selected -->
+                <div class="placeholder" id="placeholder-view">
+                    <div class="placeholder-icon">👆</div>
+                    <div class="placeholder-text">Select a category and a dashboard above to view</div>
+                    <div class="placeholder-info">Hover a category in the menu and click a dashboard</div>
+                </div>
+
+                <!-- Dashboard Content Panels (Injected by JS) -->
+                <!-- The JS will generate the full scrollable view for each dashboard here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Application Logic -->
+    <script src="js/app.js"></script>
+</body>
+</html>

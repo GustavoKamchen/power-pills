@@ -3,7 +3,7 @@
         "id": "dash-amazon-sales",
         "title": "Amazon Sales",
         "category": "Business & Economics",
-        "iframeSrc": "",
+        "iframeSrc": "https://app.powerbi.com/view?r=eyJrIjoiMTMxYTc2YWEtNzI0OS00NjY3LTllZGUtNGYyYmMzZDMwYzEzIiwidCI6ImJiOGI4MzRiLTM2NjktNGFiMy04NjhkLTYyM2U3YjRmMjRlZCJ9",
         "description": "Amazon sales performance dashboard (Placeholder)"
     },
     {

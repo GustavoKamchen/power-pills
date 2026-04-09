@@ -3,14 +3,14 @@
         "id": "dash-amazon-sales",
         "title": "Amazon Sales",
         "category": "Business & Economics",
-        "iframeSrc": "https://app.powerbi.com/view?r=eyJrIjoiMTMxYTc2YWEtNzI0OS00NjY3LTllZGUtNGYyYmMzZDMwYzEzIiwidCI6ImJiOGI4MzRiLTM2NjktNGFiMy04NjhkLTYyM2U3YjRmMjRlZCJ9",
+        "iframeSrc": "https://app.powerbi.com/view?r=eyJrIjoiZDVlNWVhZjAtNjg3Yi00ODE5LWE1MTgtODM5M2RlNWZjZjE5IiwidCI6ImJiOGI4MzRiLTM2NjktNGFiMy04NjhkLTYyM2U3YjRmMjRlZCJ9",
         "description": "Amazon sales performance dashboard (Placeholder)"
     },
     {
         "id": "dash-apple-stock-prices",
         "title": "Apple Stock Prices",
         "category": "Business & Economics",
-        "iframeSrc": "https://app.powerbi.com/view?r=eyJrIjoiZjc3ZTYzZDgtNmRkZC00YTg1LWEwMjEtY2NlYjIyOTcyY2U4IiwidCI6ImJiOGI4MzRiLTM2NjktNGFiMy04NjhkLTYyM2U3YjRmMjRlZCJ9",
+        "iframeSrc": "https://app.powerbi.com/view?r=eyJrIjoiN2U5NTE3MWItZjZiYy00ZTIzLWJiMzAtYTI3NGE1ODFmYzllIiwidCI6ImJiOGI4MzRiLTM2NjktNGFiMy04NjhkLTYyM2U3YjRmMjRlZCJ9",
         "description": "This Power BI dashboard offers an interactive analysis of Apple Inc. (AAPL) stock prices, highlighting financial performance, volatility, returns, and risk metrics over time. Utilizing historical data with dynamic filters by date, year, and month, it features three pages: Overview, Performance, and Risk. Built on a structured data model with advanced DAX measures, it demonstrates interactive visualizations, KPIs, and drill-down functionalities for comprehensive financial insights."
     },
     {
